@@ -22,7 +22,7 @@ class Musician:
         pass
     
 
-class Band(Musician):
+class Band:
  
     instances = []
 
@@ -30,6 +30,13 @@ class Band(Musician):
         self.name = name
         self.members = members
         Band.instances.append(self)
+    
+    def __str__(self):
+        return f" band {self.name}"
+
+    def __repr__(self):
+       return f"{self.name}"
+    
 
     def play_solos(self):
         solos_member = []
@@ -37,14 +44,9 @@ class Band(Musician):
             solos_member.append(member.play_solo())
         return solos_member
 
-    def __str__(self):
-        return f" band {self.name}"
-
-    def __repr__(self):
-       return f"{self.name}"
+    
     
     @classmethod
-
     def to_list(cls):
         return cls.instances
 
@@ -70,6 +72,9 @@ class Guitarist (Musician):
 
 class Drummer(Musician):
        
+       def __init__(self, name):
+        self.name = name
+
        def __str__(self):
             return (f'My name is {self.name} and I play drums')
        
@@ -85,6 +90,9 @@ class Drummer(Musician):
  
 class Bassist(Musician):
        
+       def __init__(self, name):
+        self.name = name
+        
        def __str__(self):
             return (f'My name is {self.name} and I play bass')
        
