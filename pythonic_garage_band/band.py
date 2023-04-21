@@ -1,5 +1,6 @@
 from abc import abstractclassmethod
 
+## The Musician class is an abstract base class that defines the methods and properties for a musician
 class Musician:
     
     def __init__(self, name):
@@ -7,11 +8,11 @@ class Musician:
 
     @abstractclassmethod
     def __str__(self):
-        pass
+        return f"My name is {self.name} and I play {self.get_instrument()}"
 
     @abstractclassmethod
     def __repr__(self):
-        pass
+        return f"{self.name}"
 
     @abstractclassmethod
     def get_instrument(self):
@@ -22,6 +23,7 @@ class Musician:
         pass
     
 
+#The Band class represents a band, which is a group of musicians.
 class Band:
  
     instances = []
@@ -57,15 +59,15 @@ class Guitarist (Musician):
             self.name=name
             
       def __str__(self):
-            return (f'My name is {self.name} and I play guitar')
+            return (f'My name is {self.name} and I play guitar')#returns a string representation of the musician, including their name and the instrument they play.
       
       def __repr__(self):
-            return (f'Guitarist instance. Name = {self.name}')
+            return (f'Guitarist instance. Name = {self.name}')#returns a string representation of the musician for debugging purposes.
       
-      def get_instrument(self):
+      def get_instrument(self):#returns the name of the instrument the musician plays.
           return 'guitar'
       
-      def play_solo (self):
+      def play_solo (self):#returns a string representation of the musician playing a solo.
           return 'face melting guitar solo'
 
 
@@ -76,15 +78,15 @@ class Drummer(Musician):
         self.name = name
 
        def __str__(self):
-            return (f'My name is {self.name} and I play drums')
+            return (f'My name is {self.name} and I play drums')#returns a string representation of the musician, including their name and the instrument they play.
        
        def __repr__(self):
-            return (f'Drummer instance. Name = {self.name}')
+            return (f'Drummer instance. Name = {self.name}')#returns a string representation of the musician for debugging purposes.
        
-       def get_instrument(self):
+       def get_instrument(self):#returns the name of the instrument the musician plays.
           return 'drums'
        
-       def play_solo (self):
+       def play_solo (self):#returns a string representation of the musician playing a solo.
           return 'rattle boom crash'
 
  
@@ -94,13 +96,15 @@ class Bassist(Musician):
         self.name = name
         
        def __str__(self):
-            return (f'My name is {self.name} and I play bass')
+            return (f'My name is {self.name} and I play bass')#returns a string representation of the musician, including their name and the instrument they play.
        
        def __repr__(self):
-            return (f'Bassist instance. Name = {self.name}')
+            return (f'Bassist instance. Name = {self.name}')#returns a string representation of the musician for debugging purposes.
        
-       def get_instrument(self):
+       def get_instrument(self):#returns the name of the instrument the musician plays.
           return 'bass'
        
-       def play_solo (self):
+       def play_solo (self):#returns a string representation of the musician playing a solo.
           return 'bom bom buh bom'
+       
+
